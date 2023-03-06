@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres:15-alpine
+    restart: always
+    volumes:
+      - ./postgres:/db
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_DB: resume_creator
+      POSTGRES_USER: local_tset_admin
+      POSTGRES_PASSWORD: local_test_pw
